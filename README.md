@@ -24,7 +24,7 @@ I'm **Tag Hamad**, a passionate Backend Developer building scalable, secure, and
 
 ## 📫 Connect
 
-- Email: tag.hamad@example.com
+- Email: tag.hamad740@gmail.com
 - GitHub: [eight0o0](https://github.com/eight0o0)
 - LinkedIn: [Tag Hamad](https://linkedin.com/in/eight0o0)
 
