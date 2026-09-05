@@ -4,10 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="icon.png" />
-
+  <h2><i class="fa-brands fa-dev"></i></h2>
   <title>Tag Hamad | Backend Developer</title>
-  <!-- Font Awesome 6 (free) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     /* ----- RESET & BASE (Neo-Glass Aurora) ----- */
@@ -272,7 +271,7 @@
       width: 60%;
     }
 
-    .theme-toggle {
+    /* .theme-toggle {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--glass-border);
       color: var(--text-primary);
@@ -288,9 +287,38 @@
     .theme-toggle:hover {
       border-color: var(--aurora-1);
       box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.15), inset -4px -4px 8px rgba(255, 255, 255, 0.02);
+    } */
+    .theme-toggle {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      padding: 6px 14px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      backdrop-filter: blur(6px);
+      transition: var(--transition);
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15), -4px -4px 8px rgba(255, 255, 255, 0.02);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
     }
 
-    /* Hamburger – clean & transforms to X */
+    .theme-toggle:hover {
+      border-color: var(--aurora-1);
+      box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.15), inset -4px -4px 8px rgba(255, 255, 255, 0.02);
+    }
+
+    .theme-toggle i {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .theme-toggle:hover i {
+      transform: rotate(20deg);
+    }
+
     .hamburger {
       display: none;
       flex-direction: column;
@@ -298,33 +326,15 @@
       cursor: pointer;
       padding: 6px 8px;
       border-radius: 12px;
-      background: transparent;
-      border: none;
-      transition: var(--transition);
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15), -4px -4px 8px rgba(255, 255, 255, 0.02);
     }
 
     .hamburger span {
-      display: block;
       width: 28px;
       height: 3px;
       background: var(--text-primary);
       border-radius: 6px;
-      transition: 0.3s ease;
-      transform-origin: center;
-    }
-
-    /* X state (active) */
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
+      transition: 0.3s;
     }
 
     /* ----- HERO ----- */
@@ -817,6 +827,7 @@
       box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.12), -12px -12px 24px rgba(255, 255, 255, 0.01);
     }
 
+    /* column titles inside contact grid */
     .column-title {
       font-size: 1.4rem;
       font-weight: 700;
@@ -878,13 +889,13 @@
     .contact-item a {
       font-size: 0.8rem;
       color: var(--text-primary);
-      word-break: break-word;
     }
 
     .contact-item a:hover {
       color: var(--aurora-1);
     }
 
+    /* right column — form */
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -926,7 +937,6 @@
       text-align: center;
       padding: 1.2rem 0;
       border-top: 1px solid var(--glass-border);
-      border-radius: 40px 40px 40px 40px;
       color: var(--text-secondary);
       font-size: 0.9rem;
       backdrop-filter: blur(4px);
@@ -937,7 +947,7 @@
       font-size: 0.8rem;
     }
 
-    /* ----- RESPONSIVE (mobile first) ----- */
+    /* ----- RESPONSIVE ----- */
     @media (max-width: 1024px) {
       .hero-container {
         grid-template-columns: 1fr;
@@ -984,55 +994,25 @@
         padding: 1rem;
       }
 
-      .nav-container {
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-
-      .logo {
-        font-size: 1.2rem;
-        flex: 1;
-        justify-content: center;
-        margin: 0 auto;
-      }
-
-      .hamburger {
-        display: flex;
-        order: 2;
-        margin-left: auto;
-      }
-
       .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: var(--glass-bg);
-        color: var(--text-primary);
+        background: rgba(13, 19, 35, 0.85);
         backdrop-filter: blur(20px);
         padding: 1rem;
         border-radius: 40px;
         margin-top: 0.6rem;
         gap: 0.8rem;
         border: 1px solid var(--glass-border);
-        order: 3;
       }
 
       .nav-links.active {
         display: flex;
       }
 
-      .nav-links a {
-        color: var(--text-secondary);
-      }
-
-      .nav-links a:hover,
-      .nav-links a:focus {
-        color: var(--text-primary);
-      }
-
-      .nav-links .theme-toggle {
-        align-self: center;
-        margin-top: 0.2rem;
+      .hamburger {
+        display: flex;
       }
 
       .hero-name {
@@ -1053,56 +1033,16 @@
         height: 180px;
       }
 
-      .contact-grid {
-        padding: 1.5rem;
-        gap: 1.8rem;
-      }
-
       .contact-items-grid {
         grid-template-columns: 1fr;
-        gap: 0.6rem;
       }
 
-      .contact-item {
-        padding: 0.5rem 0.8rem;
-        gap: 10px;
-      }
-
-      .contact-item i {
-        width: 28px;
-        height: 28px;
-        font-size: 0.95rem;
-      }
-
-      .contact-item h4 {
-        font-size: 0.55rem;
-      }
-
-      .contact-item a {
-        font-size: 0.75rem;
-        word-break: break-word;
-      }
-
-      .column-title {
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
-      }
-
-      .contact-form .btn {
-        width: 100% !important;
-        justify-content: center;
-        text-align: center;
-        align-self: stretch;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
+      .contact-grid {
+        padding: 1.5rem;
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 500px) {
       .hero-name {
         font-size: 2.2rem;
       }
@@ -1124,22 +1064,7 @@
       }
 
       .column-title {
-        font-size: 1.1rem;
-      }
-
-      .contact-item {
-        padding: 0.4rem 0.6rem;
-        gap: 8px;
-      }
-
-      .contact-item i {
-        width: 24px;
-        height: 24px;
-        font-size: 0.85rem;
-      }
-
-      .contact-item a {
-        font-size: 0.7rem;
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -1162,20 +1087,21 @@
     <nav class="navbar">
       <div class="nav-container">
         <a href="#" class="logo">
-          <i class="fa-brands fa-dev" style="font-size: 1.8rem;"></i>
+          <!-- <img src="terminal.png" class="logo-icon" alt="terminal" /> -->
+          <h2><i class="fa-brands fa-dev"></i></h2>
           <span>TAG HAMAD</span>
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </button>
         <ul class="nav-links" id="navLinks">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+          <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon" id="themeIcon"></i></button></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </nav>
 
@@ -1183,7 +1109,7 @@
     <section id="home" class="hero">
       <div class="hero-container">
         <div class="hero-content">
-          <p class="hero-greeting">Hello <i class="far fa-face-smile-beam"></i>, I'm</p>
+          <p class="hero-greeting">Hello <i class="fas fa-face-smile-beam"></i>, I'm</p>
           <h1 class="hero-name">TAG HAMAD</h1>
           <div class="hero-title-wrapper">
             <span class="prompt"> $&gt;_</span>
@@ -1191,14 +1117,13 @@
             <span class="cursor"></span>
           </div>
           <p class="hero-desc">
-            <i class="fa-solid fa-circle-info"></i> Junior AI / Python Backend Engineer — building intelligent, scalable
-            systems with Django, REST APIs, and
+            Junior AI / Python Backend Engineer — building intelligent, scalable systems with Django, REST APIs, and
             machine learning.
           </p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            <a href="Tag_Hamad_Resume.pdf" download class="btn btn-primary">Get My CV</a>
+            <a href="Tag_Mohamed_Hamad_Resume.pdf" download class="btn btn-primary">Get My CV</a>
           </div>
           <div class="hero-social">
             <a href="https://github.com/Eight0o0" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -1208,7 +1133,7 @@
         </div>
         <div class="hero-avatar">
           <div class="avatar-circle">
-            <img src="avatar.jpg" alt="Tag Hamad" />
+            <img src="me.jpg" alt="Tag Hamad" />
           </div>
         </div>
       </div>
@@ -1296,8 +1221,7 @@
             <h3>E-Commerce API</h3>
             <p>Scalable REST API with JWT, payment integration, and real-time inventory.</p>
             <div class="project-tags"><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Stripe</span>
-            </div>
-            <a href="#" class="project-link">View Project →</a>
+            </div><a href="#" class="project-link">View Project →</a>
           </div>
           <div class="project-card">
             <div class="project-icon"><i class="fas fa-cloud"></i></div>
@@ -1324,7 +1248,7 @@
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-- ===== CONTACT (UPDATED with centered column titles) ===== -->
     <section id="contact" class="contact">
       <div class="container">
         <h2 class="section-title">Connect Me</h2>
@@ -1333,8 +1257,9 @@
             great.</p>
         </div>
         <div class="contact-grid">
+          <!-- RIGHT COLUMN: Contact Me -->
           <div class="contact-info">
-            <div class="column-title"><i class="fa-regular fa-envelope" style="margin-right: 0.5rem;"></i>Contact Me
+            <div class="column-title"><i class="fa-regular fa-envelope" style="margin-right: 0.5rem;"></i></i>Contact Me
             </div>
             <div class="contact-items-grid">
               <div class="contact-item"><i class="fas fa-envelope"></i>
@@ -1379,6 +1304,9 @@
               </div>
             </div>
           </div>
+          <!-- LEFT COLUMN: Report -->
+
+
           <form class="contact-form" id="contactForm">
             <div class="column-title" style="margin-bottom: 0.2rem;">
               <i class="fas fa-flag" style="margin-right: 0.5rem;"></i>Suggestions & Feedbacks
@@ -1387,7 +1315,7 @@
             <input type="email" placeholder="Your Email" required />
             <input type="text" placeholder="Subject" />
             <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+            <button type="submit" class="btn btn-primary" style="width: 528.83px;">Send Message</button>
           </form>
         </div>
       </div>
@@ -1403,19 +1331,44 @@
   </div>
 
   <script>
-    // ----- THEME TOGGLE (Font Awesome icons) -----
+    // ----- THEME TOGGLE -----
+    // const toggle = document.getElementById('themeToggle');
+    // let theme = 'dark';
+    // function setTheme(t) {
+    //   theme = t;
+    //   document.documentElement.setAttribute('data-theme', t);
+    //   localStorage.setItem('preferred-theme', t);
+    //   toggle.textContent = t === 'dark' ? '🌙' : '☀️'; //moon
+    // }
+
+    // const saved = localStorage.getItem('preferred-theme') || 'dark';
+    // setTheme(saved);
+    // toggle.addEventListener('click', () => setTheme(theme === 'dark' ? 'light' : 'dark'));
+
+    // ----- THEME TOGGLE with Font Awesome icons -----
     const toggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
     let theme = 'dark';
+
     function setTheme(t) {
       theme = t;
       document.documentElement.setAttribute('data-theme', t);
       localStorage.setItem('preferred-theme', t);
-      toggle.innerHTML = t === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-    }
-    const saved = localStorage.getItem('preferred-theme') || 'dark';
-    setTheme(saved);
-    toggle.addEventListener('click', () => setTheme(theme === 'dark' ? 'light' : 'dark'));
 
+      // Update icon
+      if (t === 'dark') {
+        themeIcon.className = 'fas fa-moon';
+      } else {
+        themeIcon.className = 'fas fa-sun';
+      }
+    }
+
+    const savedTheme = localStorage.getItem('preferred-theme') || 'dark';
+    setTheme(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      setTheme(theme === 'dark' ? 'light' : 'dark');
+    });
     // ----- TYPING (terminal) -----
     const phrases = ["Backend Engineer", "AI Engineer", "Python Developer", "REST API Architect", "Django Developer", "ML Engineer", "Systems Architect"];
     const el = document.getElementById('typingText');
@@ -1437,7 +1390,7 @@
     el.textContent = '';
     setTimeout(type, 300);
 
-    // ----- MOBILE NAV (hamburger <-> X) -----
+    // ----- MOBILE NAV -----
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => {
@@ -1486,7 +1439,6 @@
       });
     });
   </script>
-
 </body>
 
 </html>
