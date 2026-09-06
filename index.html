@@ -922,19 +922,68 @@
 
     /* ----- FOOTER ----- */
     .footer {
-      margin-top: 2rem;
-      text-align: center;
-      padding: 1.2rem 0;
-      border-top: 1px solid var(--glass-border);
-      border-radius: 40px 40px 40px 40px;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      backdrop-filter: blur(4px);
+      background: #0d1117;
+      color: #8b949e;
+      padding: 2rem 0;
+      border-top: 1px solid #30363d;
+      border-radius: var(--radius);
+      margin-top: 4rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-info {
+      text-align: left;
+    }
+
+    .footer-info p {
+      margin: 0.25rem 0;
     }
 
     .footer-tagline {
-      opacity: 0.6;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+
+    .footer-tagline i {
+      color: #58a6ff;
+      margin-right: 0.5rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-social a {
+      color: #8b949e;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .footer-social a:hover {
+      color: #58a6ff;
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-info {
+        text-align: center;
+      }
     }
 
     /* ----- RESPONSIVE (mobile first) ----- */
@@ -1200,7 +1249,8 @@
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            <a href="Tag_Hamad_Resume.pdf" download class="btn btn-primary"> My C.v. <i class="fa-solid fa-file-pdf"></i></a>
+            <a href="Tag_Hamad_Resume.pdf" download class="btn btn-primary"> My C.v. <i
+                class="fa-solid fa-download"></i></i></a>
           </div>
           <div class="hero-social">
             <a href="https://github.com/Eight0o0" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -1219,7 +1269,7 @@
     <!-- ===== ABOUT ===== -->
     <section id="about" class="about">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title"><i class="fa-solid fa-address-card"></i> About Me</h2>
         <div class="about-grid">
           <div class="about-text">
             <p>
@@ -1260,28 +1310,46 @@
     <!-- ===== SKILLS ===== -->
     <section id="skills" class="skills">
       <div class="container">
-        <h2 class="section-title">Tech Stacks</h2>
+        <h2 class="section-title"> <i class="fa-brands fa-stack-overflow"></i> Tech Stacks</h2>
         <div class="skills-grid">
           <div class="skill-category">
-            <h3>Languages</h3>
+            <h3><i class="fa-solid fa-code"></i></i> Programming Languages</h3>
             <div class="skill-tags">
-              <span>Python</span><span>JavaScript</span><span>TypeScript</span><span>Go</span><span>Java</span>
+              <span><i class="fab fa-python"></i> Python</span>
+              <span><i class="fab fa-js"></i> JavaScript</span>
+              <span><i class="fab fa-js-square"></i> TypeScript</span>
+              <span><i class="fab fa-golang"></i> Go</span>
+              <span><i class="fab fa-java"></i> Java</span>
             </div>
           </div>
           <div class="skill-category">
-            <h3>Frameworks</h3>
-            <div class="skill-tags"><span>Node.js</span><span>Express</span><span>Django</span><span>Spring
-                Boot</span><span>FastAPI</span></div>
-          </div>
-          <div class="skill-category">
-            <h3>Databases</h3>
-            <div class="skill-tags"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span>
+            <h3><i class="fas fa-cubes"></i> Frameworks</h3>
+            <div class="skill-tags">
+              <span><i class="fab fa-node-js"></i> Node.js</span>
+              <span><i class="fas fa-server"></i> Express</span>
+              <span><i class="fab fa-python"></i> Django</span>
+              <span><i class="fas fa-leaf"></i> Spring Boot</span>
+              <span><i class="fas fa-bolt"></i> FastAPI</span>
             </div>
           </div>
           <div class="skill-category">
-            <h3>DevOps &amp; Tools</h3>
+            <h3><i class="fas fa-database"></i> Databases</h3>
             <div class="skill-tags">
-              <span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Git</span><span>Linux</span><span>Nginx</span>
+              <span><i class="fas fa-database"></i> PostgreSQL</span>
+              <span><i class="fas fa-database"></i> MySQL</span>
+              <span><i class="fas fa-leaf"></i> MongoDB</span>
+              <span><i class="fas fa-fire"></i> Redis</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> DevOps &amp; Tools</h3>
+            <div class="skill-tags">
+              <span><i class="fab fa-docker"></i> Docker</span>
+              <span><i class="fas fa-cubes"></i> Kubernetes</span>
+              <span><i class="fab fa-aws"></i> AWS</span>
+              <span><i class="fab fa-git-alt"></i> Git</span>
+              <span><i class="fab fa-linux"></i> Linux</span>
+              <span><i class="fas fa-server"></i> Nginx</span>
             </div>
           </div>
         </div>
@@ -1291,36 +1359,57 @@
     <!-- ===== PROJECTS ===== -->
     <section id="projects" class="projects">
       <div class="container">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">
+          <i class="fa-solid fa-briefcase"></i> Projects
+        </h2>
         <div class="projects-grid">
           <div class="project-card">
             <div class="project-icon"><i class="fas fa-server"></i></div>
             <h3>E-Commerce API</h3>
             <p>Scalable REST API with JWT, payment integration, and real-time inventory.</p>
-            <div class="project-tags"><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Stripe</span>
+            <div class="project-tags">
+              <span><i class="fab fa-node-js"></i> Node.js</span>
+              <span><i class="fas fa-server"></i> Express</span>
+              <span><i class="fas fa-database"></i> PostgreSQL</span>
+              <span><i class="fas fa-credit-card"></i> Stripe</span>
             </div>
-            <a href="#" class="project-link">View Project →</a>
+            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="project-card">
             <div class="project-icon"><i class="fas fa-cloud"></i></div>
             <h3>Task Queue System</h3>
             <p>Distributed task processing with Redis and BullMQ, 10k+ jobs/day.</p>
-            <div class="project-tags"><span>Redis</span><span>BullMQ</span><span>Node.js</span><span>Docker</span></div>
-            <a href="#" class="project-link">View Project →</a>
+            <div class="project-tags">
+              <span><i class="fas fa-fire"></i> Redis</span>
+              <span><i class="fas fa-tasks"></i> BullMQ</span>
+              <span><i class="fab fa-node-js"></i> Node.js</span>
+              <span><i class="fab fa-docker"></i> Docker</span>
+            </div>
+            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="project-card">
             <div class="project-icon"><i class="fas fa-lock"></i></div>
             <h3>Auth Service</h3>
             <p>Microservice with OAuth2, SSO, rate limiting, and session management.</p>
-            <div class="project-tags"><span>Python</span><span>FastAPI</span><span>JWT</span><span>MongoDB</span></div>
-            <a href="#" class="project-link">View Project →</a>
+            <div class="project-tags">
+              <span><i class="fab fa-python"></i> Python</span>
+              <span><i class="fas fa-bolt"></i> FastAPI</span>
+              <span><i class="fas fa-key"></i> JWT</span>
+              <span><i class="fas fa-leaf"></i> MongoDB</span>
+            </div>
+            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="project-card">
             <div class="project-icon"><i class="fas fa-database"></i></div>
             <h3>Data Pipeline</h3>
             <p>ETL pipeline for large datasets with automated scheduling and monitoring.</p>
-            <div class="project-tags"><span>Go</span><span>Kafka</span><span>PostgreSQL</span><span>Grafana</span></div>
-            <a href="#" class="project-link">View Project →</a>
+            <div class="project-tags">
+              <span><i class="fab fa-golang"></i> Go</span>
+              <span><i class="fas fa-stream"></i> Kafka</span>
+              <span><i class="fas fa-database"></i> PostgreSQL</span>
+              <span><i class="fas fa-chart-line"></i> Grafana</span>
+            </div>
+            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -1329,7 +1418,7 @@
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2 class="section-title">Connect Me</h2>
+        <h2 class="section-title"><i class="fa-brands fa-telegram"></i> Connect Me</h2>
         <div class="contact-sub-wrapper">
           <p class="contact-sub"><i class="fa-regular fa-lightbulb"></i> Have a project in mind? Let's build something
             great.</p>
@@ -1398,8 +1487,28 @@
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
       <div class="container">
-        <p>© 2026 · <strong>Tag Hamad</strong> · All Rights Reserved</p>
-        <p class="footer-tagline">Eight0o0 · Backend Developer</p>
+        <div class="footer-inner">
+          <div class="footer-info">
+            <p>
+              <i class="far fa-copyright"></i> 2026
+              <i class="fas fa-circle"
+                style="font-size: 4px; color: #58a6ff; margin: 0 8px; vertical-align: middle;"></i>
+              <strong>Tag Hamad</strong>
+              <i class="fas fa-circle"
+                style="font-size: 4px; color: #58a6ff; margin: 0 8px; vertical-align: middle;"></i>
+              All Rights Reserved
+            </p>
+            <p class="footer-tagline">
+              <i class="fas fa-terminal"></i> <strong>EIGHT0O0</strong> · Backend Developer
+            </p>
+          </div>
+          <div class="footer-social">
+            <a href="" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
